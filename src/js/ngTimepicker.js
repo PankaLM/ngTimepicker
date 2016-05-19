@@ -5,7 +5,6 @@ angular.module('jkuri.timepicker', [])
 	var setScopeValues = function (scope, attrs) {
 		scope.initTime = attrs.initTime || '11:00';
 		scope.step = attrs.step || '15';
-		scope.showMeridian = scope.$eval(attrs.showMeridian) || false;
 		scope.meridian = attrs.meridian || 'AM';
 		scope.theme = attrs.theme || '';
 	};
@@ -13,7 +12,8 @@ angular.module('jkuri.timepicker', [])
 	return {
 		restrict: 'EA',
 		scope: {
-			readonly: '='
+			readonly: '=',
+			showMeridian: '='
 		},
 		require: '?ngModel',
 		link: function (scope, element, attrs, ngModel) {
@@ -22,9 +22,11 @@ angular.module('jkuri.timepicker', [])
 			scope.opened = false;
 
 			var initTime = function () {
-				var time = scope.initTime.split(':');
-				scope.hour = time[0];
-				scope.minutes = time[1];
+				if (scope.initTime) {
+					var time = scope.initTime.split(':');
+					scope.hour = time[0];
+					scope.minutes = time[1];
+				}
 			};
 
 			var setTime = function () {
@@ -64,9 +66,7 @@ angular.module('jkuri.timepicker', [])
             });
 
 			var reinitTime = function () {
-				var time = scope.initTime.split(':');
-				scope.hour = time[0];
-				scope.minutes = time[1];
+				var time = initTime();
 
 				time = scope.hour + ':' + scope.minutes;
 				scope.viewValue = time;
