@@ -12,7 +12,9 @@ angular.module('jkuri.timepicker', [])
 
 	return {
 		restrict: 'EA',
-		scope: true,
+		scope: {
+			readonly: '='
+		},
 		require: '?ngModel',
 		link: function (scope, element, attrs, ngModel) {
 			setScopeValues(scope, attrs);
@@ -174,8 +176,8 @@ angular.module('jkuri.timepicker', [])
 
 		},
 		template:
-		'<input type="text" ng-focus="showTimepicker()" ng-value="viewValue" class="ng-timepicker-input" ng-readonly="true">' +
-		'<div class="ng-timepicker" ng-show="opened" ng-class="{\'red\': theme === \'red\', \'green\': theme === \'green\', \'blue\': theme === \'blue\'}">' +
+		'<input type="text" ng-focus="showTimepicker()" ng-disabled="readonly" ng-value="viewValue" class="ng-timepicker-input">' +
+		'<div class="ng-timepicker" ng-show="opened"  ng-class="{\'red\': theme === \'red\', \'green\': theme === \'green\', \'blue\': theme === \'blue\'}">' +
 		'  <table>' +
 		'    <tbody>' +
 		'    <tr>' +
