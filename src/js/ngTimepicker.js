@@ -181,10 +181,10 @@ angular.module('jkuri.timepicker', [])
 		'  <table>' +
 		'    <tbody>' +
 		'    <tr>' +
-		'        <td class="act noselect" ng-click="incrementHour()"><i class="fa fa-angle-up"></i></td>' + 
+		'        <td class="act noselect" ng-click="incrementHour()"><i class="glyphicon glyphicon-chevron-up"></i></td>' + 
 		'        <td></td>' +
-		'        <td class="act noselect" ng-click="incrementMinutes()"><i class="fa fa-angle-up"></i></td>' +
-		'        <td class="act noselect" ng-click="toggleMeridian()" ng-show="showMeridian"><i class="fa fa-angle-up"></i></td>' +
+		'        <td class="act noselect" ng-click="incrementMinutes()"><i class="glyphicon glyphicon-chevron-up"></i></td>' +
+		'        <td class="act noselect" ng-click="toggleMeridian()" ng-show="showMeridian"><i class="glyphicon glyphicon-chevron-down"></i></td>' +
 		'      </tr>' +
 		'      <tr>' +
 		'        <td><input type="text" ng-model="hour" ng-readonly="true"></td>' +
@@ -193,10 +193,10 @@ angular.module('jkuri.timepicker', [])
 		'        <td ng-show="showMeridian"><input type="text" ng-model="meridian" ng-readonly="true"></td>' +
 		'      </tr>' +
 		'      <tr>' +
-		'        <td class="act noselect" ng-click="decreaseHour()"><i class="fa fa-angle-down"></i></td>' + 
+		'        <td class="act noselect" ng-click="decreaseHour()"><i class="glyphicon glyphicon-chevron-down"></i></td>' + 
 		'        <td></td>' +
-		'        <td class="act noselect" ng-click="decreaseMinutes()"><i class="fa fa-angle-down"></i></td>' +
-		'        <td class="act noselect" ng-click="toggleMeridian()" ng-show="showMeridian"><i class="fa fa-angle-down"></i></td>' +
+		'        <td class="act noselect" ng-click="decreaseMinutes()"><i class="glyphicon glyphicon-chevron-down"></i></td>' +
+		'        <td class="act noselect" ng-click="toggleMeridian()" ng-show="showMeridian"><i class="glyphicon glyphicon-chevron-down"></i></td>' +
 		'      </tr>' +
 		'  </table>' +
 		'</div>'
